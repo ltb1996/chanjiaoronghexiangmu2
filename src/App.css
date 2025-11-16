@@ -20,15 +20,34 @@ body {
 .App {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
 }
 
 .main-content {
   flex: 1;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-left: 260px;
   padding: 2rem;
-  width: 100%;
+  width: calc(100% - 260px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+/* 当侧边栏收起时 */
+.App:has(.sidebar.collapsed) .main-content {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .App:has(.sidebar.collapsed) .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 /* 通用样式 */

@@ -60,7 +60,7 @@ export const mockCourses = [
   {
     id: 2,
     title: '投资组合管理',
-    description: '学习如何构建和管理投资组合，理解风险与收益的平衡',
+    description: '学习如何构建和管理投资组合，理解风险与收益的平衡，掌握了解市场动态',
     instructor: '李博士',
     duration: '12小时',
     difficulty: '中级',
