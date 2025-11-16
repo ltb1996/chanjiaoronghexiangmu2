@@ -28,10 +28,20 @@ const Login = ({ onLogin }) => {
 
     // 模拟登录验证
     setTimeout(() => {
-      const user = mockUsers.find(u => 
+      // 先从模拟数据中查找
+      let user = mockUsers.find(u => 
         u.username === formData.username && 
         u.password === formData.password
       );
+
+      // 如果没找到，再从注册用户中查找
+      if (!user) {
+        const registeredUsers = JSON.parse(localStorage.getItem('users') || '[]');
+        user = registeredUsers.find(u => 
+          u.username === formData.username && 
+          u.password === formData.password
+        );
+      }
 
       if (user) {
         // 登录成功

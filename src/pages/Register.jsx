@@ -105,20 +105,13 @@ const Register = () => {
       existingUsers.push(newUser);
       localStorage.setItem('users', JSON.stringify(existingUsers));
 
-      // 自动登录
-      const userData = {
-        id: newUser.id,
-        username: newUser.username,
-        email: newUser.email,
-        role: newUser.role,
-        avatar: newUser.avatar,
-        level: newUser.level
-      };
-      
-      localStorage.setItem('currentUser', JSON.stringify(userData));
-      
       setLoading(false);
-      navigate('/');
+      
+      // 显示注册成功提示
+      alert('注册成功！请登录您的账户');
+      
+      // 跳转到登录页面
+      navigate('/login');
       
     }, 1500);
   };
