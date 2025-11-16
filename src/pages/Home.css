@@ -1,6 +1,8 @@
 .home {
   max-width: 1380px;
   margin: 0 auto;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 /* 英雄区域 */

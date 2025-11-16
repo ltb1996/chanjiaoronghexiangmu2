@@ -1,6 +1,8 @@
 .profile-page {
   max-width: 1380px;
   margin: 0 auto;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .not-logged-in {
