@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { mockCourses } from '../data/mockData';
 import StorageUtil from '../utils/storage';
 import './Courses.css';
 
 const Courses = ({ currentUser }) => {
-  const [courses, setCourses] = useState([]);
+  // 使用函数式初始化，避免在 useEffect 中同步调用 setState
+  const [courses, setCourses] = useState(() => {
+    const savedCourses = localStorage.getItem('courses');
+    if (savedCourses) {
+      return JSON.parse(savedCourses);
+    } else {
+      localStorage.setItem('courses', JSON.stringify(mockCourses));
+      return mockCourses;
+    }
+  });
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    // 初始化课程数据
-    const savedCourses = localStorage.getItem('courses');
-    if (savedCourses) {
-      setCourses(JSON.parse(savedCourses));
-    } else {
-      setCourses(mockCourses);
-      localStorage.setItem('courses', JSON.stringify(mockCourses));
-    }
-  }, []);
 
   const categories = ['all', ...new Set(courses.map(course => course.category))];
   const difficulties = ['all', '初级', '中级', '高级'];

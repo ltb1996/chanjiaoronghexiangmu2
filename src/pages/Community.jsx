@@ -1,10 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { mockPosts } from '../data/mockData';
 import StorageUtil from '../utils/storage';
 import './Community.css';
 
 const Community = ({ currentUser }) => {
-  const [posts, setPosts] = useState([]);
+  // 使用函数式初始化，避免在 useEffect 中同步调用 setState
+  const [posts, setPosts] = useState(() => {
+    const savedPosts = StorageUtil.getPosts();
+    if (savedPosts.length === 0) {
+      // 如果没有保存的帖子，使用模拟数据
+      return mockPosts;
+    } else {
+      return savedPosts;
+    }
+  });
   const [newPost, setNewPost] = useState({
     title: '',
     content: '',
@@ -16,17 +25,6 @@ const Community = ({ currentUser }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const categories = ['all', '股票讨论', '投资分析', '风险管理', '基础知识', '行业动态'];
-
-  useEffect(() => {
-    // 加载帖子数据
-    const savedPosts = StorageUtil.getPosts();
-    if (savedPosts.length === 0) {
-      // 如果没有保存的帖子，使用模拟数据
-      setPosts(mockPosts);
-    } else {
-      setPosts(savedPosts);
-    }
-  }, []);
 
   const filteredPosts = posts.filter(post => {
     const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
