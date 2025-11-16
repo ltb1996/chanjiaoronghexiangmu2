@@ -11,15 +11,42 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0f1419;
-  background-image: radial-gradient(circle at 20% 50%, rgba(0, 180, 216, 0.05) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
   color: #e4e6eb;
   min-height: 100vh;
 }
 
 .App {
   min-height: 100vh;
+  position: relative;
+}
+
+/* 流体动画背景层 */
+.liquid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.liquid-background > * {
+  pointer-events: auto;
+}
+
+/* 主要内容层 */
+.app-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
   display: flex;
+  pointer-events: none;
+}
+
+.app-content > * {
+  pointer-events: auto;
 }
 
 .main-content {
@@ -75,19 +102,22 @@ body {
 }
 
 .card {
-  background: #1e2530;
+  background: rgba(30, 37, 48, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #2d3548;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(45, 53, 72, 0.6);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.2);
-  border-color: #00b4d8;
+  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.3);
+  border-color: rgba(0, 180, 216, 0.8);
+  background: rgba(30, 37, 48, 0.95);
 }
 
 .form-group {
@@ -192,4 +222,28 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* 全局半透明玻璃效果覆盖 - 让流体背景透过 */
+.hero-section,
+.stat-card,
+.course-card,
+.post-card,
+.feature-card,
+.filters-section,
+.new-post-form,
+.community-filters,
+.posts-stats,
+.login-card,
+.register-card,
+.quick-login,
+.profile-header,
+.progress-card,
+.achievement-card,
+.setting-item,
+.record-item {
+  background: rgba(30, 37, 48, 0.85) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-color: rgba(45, 53, 72, 0.6) !important;
 }
