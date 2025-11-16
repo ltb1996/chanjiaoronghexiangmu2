@@ -1,8 +1,10 @@
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(30, 37, 48, 0.95);
+  backdrop-filter: blur(10px);
   color: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #2d3548;
 }
 
 .header-container {
@@ -40,7 +42,8 @@
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  background-color: rgba(255,255,255,0.2);
+  background: linear-gradient(135deg, #00d4ff 0%, #00b4d8 100%);
+  color: #0f1419;
 }
 
 .user-section {
@@ -61,19 +64,21 @@
 
 .user-info a,
 .user-info button {
-  color: white;
+  color: #e4e6eb;
   text-decoration: none;
-  background: rgba(255,255,255,0.2);
-  border: none;
+  background: #252d3d;
+  border: 1px solid #3a4556;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .user-info a:hover,
 .user-info button:hover {
-  background: rgba(255,255,255,0.3);
+  background: linear-gradient(135deg, #00d4ff 0%, #00b4d8 100%);
+  color: #0f1419;
+  border-color: #00d4ff;
 }
 
 .auth-buttons {
@@ -82,15 +87,16 @@
 }
 
 .auth-buttons a {
-  color: white;
+  color: #e4e6eb;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border: 2px solid white;
+  border: 2px solid #00b4d8;
   border-radius: 5px;
   transition: all 0.3s;
 }
 
 .auth-buttons a:hover {
-  background: white;
-  color: #667eea;
+  background: linear-gradient(135deg, #00d4ff 0%, #00b4d8 100%);
+  color: #0f1419;
+  border-color: #00d4ff;
 }

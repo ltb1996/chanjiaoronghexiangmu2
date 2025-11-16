@@ -7,10 +7,11 @@
 }
 
 .login-card {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   border-radius: 20px;
   padding: 3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -21,13 +22,13 @@
 }
 
 .login-header h2 {
-  color: #333;
+  color: #e4e6eb;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .login-header p {
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 1.1rem;
 }
 
@@ -44,24 +45,25 @@
 }
 
 .error-message {
-  background: #f8d7da;
-  color: #721c24;
+  background: rgba(220, 53, 69, 0.1);
+  color: #ff6b6b;
   padding: 0.75rem;
   border-radius: 8px;
   margin-bottom: 1rem;
-  border: 1px solid #f5c6cb;
+  border: 1px solid rgba(220, 53, 69, 0.3);
 }
 
 .quick-login {
   margin-bottom: 2rem;
   padding: 1rem;
-  background: #f8f9fa;
+  background: #252d3d;
+  border: 1px solid #3a4556;
   border-radius: 12px;
 }
 
 .quick-login p {
   margin-bottom: 1rem;
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 0.9rem;
 }
 
@@ -83,16 +85,17 @@
 
 .login-footer p {
   margin-bottom: 0.5rem;
-  color: #6c757d;
+  color: #b8bcc8;
 }
 
 .login-footer a {
-  color: #667eea;
+  color: #00d4ff;
   text-decoration: none;
   font-weight: 600;
 }
 
 .login-footer a:hover {
+  color: #00e4ff;
   text-decoration: underline;
 }
 

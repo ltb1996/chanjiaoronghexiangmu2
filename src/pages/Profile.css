@@ -6,20 +6,21 @@
 .not-logged-in {
   text-align: center;
   padding: 4rem 2rem;
-  color: #6c757d;
+  color: #b8bcc8;
 }
 
 .not-logged-in h2 {
   margin-bottom: 1rem;
-  color: #333;
+  color: #e4e6eb;
 }
 
 /* 个人信息头部 */
 .profile-header {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   border-radius: 20px;
   padding: 3rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
@@ -35,30 +36,31 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #667eea;
+  border: 4px solid #00b4d8;
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
 }
 
 .profile-info h1 {
-  color: #333;
+  color: #e4e6eb;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
 .profile-role {
-  color: #667eea;
+  color: #00d4ff;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .profile-email {
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
 .profile-join-date {
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 1rem;
 }
 
@@ -75,11 +77,11 @@
 .achievements-section h2,
 .settings-section h2,
 .learning-records-section h2 {
-  color: #333;
+  color: #e4e6eb;
   font-size: 1.8rem;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid #3a4556;
 }
 
 .stats-grid {
@@ -89,18 +91,21 @@
 }
 
 .stat-card {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
+  border-color: #00b4d8;
+  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.2);
 }
 
 .stat-icon {
@@ -109,14 +114,17 @@
 }
 
 .stat-content h3 {
-  color: #667eea;
+  background: linear-gradient(135deg, #00d4ff 0%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .stat-content p {
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 1rem;
   margin: 0;
 }
@@ -129,15 +137,16 @@
 }
 
 .progress-card {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
 .progress-card h3 {
-  color: #333;
+  color: #e4e6eb;
   margin-bottom: 2rem;
   font-size: 1.3rem;
 }
@@ -161,7 +170,7 @@
 .circle-inner {
   width: 90px;
   height: 90px;
-  background: white;
+  background: #252d3d;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -172,12 +181,12 @@
 .progress-percent {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #667eea;
+  color: #00d4ff;
 }
 
 .progress-text {
   font-size: 0.8rem;
-  color: #6c757d;
+  color: #b8bcc8;
 }
 
 /* 连续学习天数 */
@@ -192,16 +201,19 @@
 .streak-number {
   font-size: 3rem;
   font-weight: 700;
-  color: #667eea;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .streak-text {
   font-size: 1.2rem;
-  color: #6c757d;
+  color: #b8bcc8;
 }
 
 .streak-desc {
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 1rem;
 }
 
@@ -213,18 +225,24 @@
 }
 
 .achievement-card {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   gap: 1rem;
   text-align: left;
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+  border-color: #00b4d8;
 }
 
 .achievement-card.earned {
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #00b4d8;
 }
 
 .achievement-icon {
@@ -233,13 +251,13 @@
 }
 
 .achievement-info h4 {
-  color: #333;
+  color: #e4e6eb;
   margin-bottom: 0.25rem;
   font-size: 1.1rem;
 }
 
 .achievement-info p {
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 0.9rem;
   margin: 0;
 }
@@ -247,10 +265,11 @@
 .no-achievements {
   text-align: center;
   padding: 2rem;
-  color: #6c757d;
-  background: white;
+  color: #b8bcc8;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* 设置区域 */
@@ -261,28 +280,30 @@
 }
 
 .setting-item {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .setting-item:hover {
   transform: translateY(-2px);
+  border-color: #00b4d8;
 }
 
 .setting-info h4 {
-  color: #333;
+  color: #e4e6eb;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .setting-info p {
-  color: #6c757d;
+  color: #b8bcc8;
   margin: 0;
   font-size: 0.9rem;
 }
@@ -295,18 +316,20 @@
 }
 
 .record-item {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .record-item:hover {
   transform: translateY(-2px);
+  border-color: #00b4d8;
 }
 
 .record-icon {
@@ -317,13 +340,13 @@
 }
 
 .record-content h4 {
-  color: #333;
+  color: #e4e6eb;
   margin-bottom: 0.25rem;
   font-size: 1rem;
 }
 
 .record-content p {
-  color: #6c757d;
+  color: #b8bcc8;
   margin: 0;
   font-size: 0.9rem;
 }

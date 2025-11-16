@@ -7,10 +7,11 @@
 }
 
 .register-card {
-  background: white;
+  background: #1e2530;
+  border: 1px solid #2d3548;
   border-radius: 20px;
   padding: 3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 450px;
 }
@@ -21,13 +22,13 @@
 }
 
 .register-header h2 {
-  color: #333;
+  color: #e4e6eb;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .register-header p {
-  color: #6c757d;
+  color: #b8bcc8;
   font-size: 1.1rem;
 }
 
@@ -45,16 +46,16 @@
 
 /* 表单验证样式 */
 .form-control.is-invalid {
-  border-color: #dc3545;
+  border-color: #ff6b6b;
 }
 
 .form-control.is-invalid:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
 }
 
 .invalid-feedback {
-  color: #dc3545;
+  color: #ff6b6b;
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
@@ -65,16 +66,17 @@
 
 .register-footer p {
   margin-bottom: 0.5rem;
-  color: #6c757d;
+  color: #b8bcc8;
 }
 
 .register-footer a {
-  color: #667eea;
+  color: #00d4ff;
   text-decoration: none;
   font-weight: 600;
 }
 
 .register-footer a:hover {
+  color: #00e4ff;
   text-decoration: underline;
 }
 
