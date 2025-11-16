@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImage from '../assets/pic2.png';
 import './Sidebar.css';
 
 const Sidebar = () => {
   const location = useLocation();
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  const [isExpanded, setIsExpanded] = useState(true);
 
   const isActive = (path) => location.pathname === path;
-
-  const toggleSidebar = () => {
-    setIsExpanded(!isExpanded);
-  };
 
   const menuItems = [
     { path: '/', icon: '🏠', label: '首页' },
@@ -21,17 +17,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className={`sidebar ${isExpanded ? 'expanded' : 'collapsed'}`}>
-      {/* 切换按钮 */}
-      <button className="toggle-btn" onClick={toggleSidebar}>
-        <span className="toggle-icon">{isExpanded ? '◀' : '▶'}</span>
-      </button>
-
+    <aside className="sidebar">
       {/* Logo */}
       <div className="sidebar-logo">
         <Link to="/">
-          <span className="logo-icon">💰</span>
-          {isExpanded && <span className="logo-text">金融学习社区</span>}
+          <img src={logoImage} alt="Logo" className="logo-icon" />
+          <span className="logo-text">金融学习社区</span>
         </Link>
       </div>
 
@@ -42,10 +33,9 @@ const Sidebar = () => {
             key={item.path}
             to={item.path}
             className={`nav-item ${isActive(item.path) ? 'active' : ''}`}
-            title={!isExpanded ? item.label : ''}
           >
             <span className="nav-icon">{item.icon}</span>
-            {isExpanded && <span className="nav-label">{item.label}</span>}
+            <span className="nav-label">{item.label}</span>
           </Link>
         ))}
       </nav>
@@ -54,14 +44,12 @@ const Sidebar = () => {
       <div className="sidebar-user">
         {currentUser ? (
           <>
-            <Link to="/profile" className="user-profile" title={!isExpanded ? '个人中心' : ''}>
+            <Link to="/profile" className="user-profile">
               <img src={currentUser.avatar} alt={currentUser.username} className="user-avatar" />
-              {isExpanded && (
-                <div className="user-details">
-                  <span className="user-name">{currentUser.username}</span>
-                  <span className="user-role">{currentUser.level}</span>
-                </div>
-              )}
+              <div className="user-details">
+                <span className="user-name">{currentUser.username}</span>
+                <span className="user-role">{currentUser.level}</span>
+              </div>
             </Link>
             <button
               className="logout-btn"
@@ -69,21 +57,20 @@ const Sidebar = () => {
                 localStorage.removeItem('currentUser');
                 window.location.reload();
               }}
-              title={!isExpanded ? '退出登录' : ''}
             >
               <span className="logout-icon">🚪</span>
-              {isExpanded && <span>退出登录</span>}
+              <span>退出登录</span>
             </button>
           </>
         ) : (
           <div className="auth-buttons">
-            <Link to="/login" className="auth-btn" title={!isExpanded ? '登录' : ''}>
+            <Link to="/login" className="auth-btn">
               <span className="auth-icon">🔑</span>
-              {isExpanded && <span>登录</span>}
+              <span>登录</span>
             </Link>
-            <Link to="/register" className="auth-btn" title={!isExpanded ? '注册' : ''}>
+            <Link to="/register" className="auth-btn">
               <span className="auth-icon">✍️</span>
-              {isExpanded && <span>注册</span>}
+              <span>注册</span>
             </Link>
           </div>
         )}
@@ -93,4 +80,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-

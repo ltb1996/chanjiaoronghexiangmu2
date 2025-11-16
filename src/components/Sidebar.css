@@ -3,53 +3,15 @@
   left: 0;
   top: 0;
   height: 100vh;
+  width: 260px;
   background: rgba(30, 37, 48, 0.98);
   backdrop-filter: blur(10px);
   border-right: 1px solid #2d3548;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  transition: width 0.3s ease;
   z-index: 1000;
   overflow: hidden;
-}
-
-.sidebar.expanded {
-  width: 260px;
-}
-
-.sidebar.collapsed {
-  width: 80px;
-}
-
-/* 切换按钮 */
-.toggle-btn {
-  position: absolute;
-  right: -15px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(135deg, #00d4ff 0%, #00b4d8 100%);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 212, 255, 0.4);
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.toggle-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.6);
-}
-
-.toggle-icon {
-  color: #0f1419;
-  font-size: 0.8rem;
-  font-weight: bold;
 }
 
 /* Logo */
@@ -67,9 +29,11 @@
 }
 
 .logo-icon {
-  font-size: 2rem;
+  width: 40px;
+  height: 40px;
   min-width: 40px;
-  text-align: center;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .logo-text {
@@ -80,10 +44,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.sidebar.collapsed .logo-text {
-  display: none;
 }
 
 /* 导航菜单 */
@@ -148,15 +108,6 @@
   white-space: nowrap;
 }
 
-.sidebar.collapsed .nav-label {
-  display: none;
-}
-
-.sidebar.collapsed .nav-item {
-  justify-content: center;
-  padding: 1rem;
-}
-
 /* 用户区域 */
 .sidebar-user {
   padding: 1.5rem;
@@ -216,15 +167,6 @@
   text-overflow: ellipsis;
 }
 
-.sidebar.collapsed .user-details {
-  display: none;
-}
-
-.sidebar.collapsed .user-profile {
-  justify-content: center;
-  padding: 0.75rem;
-}
-
 .logout-btn {
   display: flex;
   align-items: center;
@@ -248,10 +190,6 @@
 
 .logout-icon {
   font-size: 1.2rem;
-}
-
-.sidebar.collapsed .logout-btn span:not(.logout-icon) {
-  display: none;
 }
 
 /* 认证按钮 */
@@ -286,14 +224,6 @@
   font-size: 1.2rem;
 }
 
-.sidebar.collapsed .auth-btn span:not(.auth-icon) {
-  display: none;
-}
-
-.sidebar.collapsed .auth-btn {
-  padding: 0.75rem;
-}
-
 /* 滚动条样式 */
 .sidebar-nav::-webkit-scrollbar {
   width: 6px;
@@ -314,27 +244,8 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .sidebar.expanded {
+  .sidebar {
     width: 100%;
     max-width: 260px;
   }
-  
-  .sidebar.collapsed {
-    width: 0;
-    border-right: none;
-  }
-  
-  .toggle-btn {
-    right: auto;
-    left: 10px;
-    top: 10px;
-  }
-  
-  .sidebar.collapsed .toggle-btn {
-    position: fixed;
-    left: 10px;
-    background: rgba(30, 37, 48, 0.95);
-    border: 1px solid #00b4d8;
-  }
 }
-
