@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { mockPosts } from '../data/mockData';
 import StorageUtil from '../utils/storage';
 import './Community.css';
 
 const Community = ({ currentUser }) => {
+  const navigate = useNavigate();
+  
   // 使用函数式初始化，避免在 useEffect 中同步调用 setState
   const [posts, setPosts] = useState(() => {
     const savedPosts = StorageUtil.getPosts();
@@ -246,7 +249,11 @@ const Community = ({ currentUser }) => {
                 <span className="post-category">{post.category}</span>
               </div>
 
-              <div className="post-content">
+              <div 
+                className="post-content"
+                onClick={() => navigate(`/community/${post.id}`)}
+                style={{ cursor: 'pointer' }}
+              >
                 <h3>{post.title}</h3>
                 <p>{post.content}</p>
                 
@@ -266,7 +273,10 @@ const Community = ({ currentUser }) => {
                 >
                   👍 {post.likes}
                 </button>
-                <button className="action-btn">
+                <button 
+                  className="action-btn"
+                  onClick={() => navigate(`/community/${post.id}`)}
+                >
                   💬 {post.replies} 回复
                 </button>
                 <button className="action-btn">

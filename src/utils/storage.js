@@ -75,6 +75,41 @@ class StorageUtil {
     return 0;
   }
 
+  // 帖子回复相关
+  static getPostReplies(postId) {
+    const key = `post_replies_${postId}`;
+    const replies = localStorage.getItem(key);
+    return replies ? JSON.parse(replies) : [];
+  }
+
+  static addPostReply(postId, reply) {
+    const replies = this.getPostReplies(postId);
+    const newReply = {
+      ...reply,
+      id: Date.now(),
+      publishTime: new Date().toLocaleString('zh-CN'),
+      likes: 0
+    };
+    replies.push(newReply);
+    const key = `post_replies_${postId}`;
+    localStorage.setItem(key, JSON.stringify(replies));
+    return newReply;
+  }
+
+  static updatePostReplies(postId, replies) {
+    const key = `post_replies_${postId}`;
+    localStorage.setItem(key, JSON.stringify(replies));
+  }
+
+  static incrementPostReplies(postId) {
+    const posts = this.getPosts();
+    const post = posts.find(p => p.id === postId);
+    if (post) {
+      post.replies += 1;
+      localStorage.setItem('community_posts', JSON.stringify(posts));
+    }
+  }
+
   // 问答数据相关
   static getQuestions() {
     const questions = localStorage.getItem('qa_questions');
