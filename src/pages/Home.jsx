@@ -79,7 +79,12 @@ const Home = () => {
         <h2>社区动态</h2>
         <div className="posts-list">
           {mockPosts.slice(0, 3).map(post => (
-            <div key={post.id} className="post-card">
+            <Link 
+              key={post.id} 
+              to={`/community/${post.id}`} 
+              className="post-card"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
               <div className="post-header">
                 <img src={post.authorAvatar} alt={post.author} className="avatar" />
                 <div className="post-meta">
@@ -95,7 +100,7 @@ const Home = () => {
                 <span>💬 {post.replies}</span>
                 <span>👁️ {post.views}</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="section-footer">
