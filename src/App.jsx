@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Courses from './pages/Courses';
+import CourseDetail from './pages/CourseDetail';
 import Community from './pages/Community';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
@@ -68,6 +69,7 @@ function App() {
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/courses" element={<Courses currentUser={currentUser} />} />
+            <Route path="/courses/:courseId" element={<CourseDetail currentUser={currentUser} />} />
             <Route path="/community" element={<Community currentUser={currentUser} />} />
             <Route path="/dashboard" element={<Dashboard currentUser={currentUser} />} />
             <Route path="/profile" element={<Profile currentUser={currentUser} />} />

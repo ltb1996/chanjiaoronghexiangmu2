@@ -38,6 +38,11 @@ export const mockUsers = [
   }
 ];
 
+// 导入视频文件
+import video1 from '../assets/video1.mp4';
+import video2 from '../assets/video2.mp4';
+import video3 from '../assets/video3.mp4';
+
 // 模拟课程数据
 export const mockCourses = [
   {
@@ -52,9 +57,9 @@ export const mockCourses = [
     rating: 4.8,
     thumbnail: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400',
     lessons: [
-      { id: 1, title: '金融市场概述', duration: '45分钟', completed: false },
-      { id: 2, title: '股票市场基础', duration: '60分钟', completed: false },
-      { id: 3, title: '债券市场入门', duration: '50分钟', completed: false }
+      { id: 1, title: '金融市场概述', duration: '45分钟', completed: false, videoUrl: video1 },
+      { id: 2, title: '股票市场基础', duration: '60分钟', completed: false, videoUrl: video2 },
+      { id: 3, title: '债券市场入门', duration: '50分钟', completed: false, videoUrl: video3 }
     ]
   },
   {
@@ -69,8 +74,8 @@ export const mockCourses = [
     rating: 4.6,
     thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400',
     lessons: [
-      { id: 1, title: '投资组合理论', duration: '90分钟', completed: false },
-      { id: 2, title: '资产配置策略', duration: '75分钟', completed: false }
+      { id: 1, title: '投资组合理论', duration: '90分钟', completed: false, videoUrl: video1 },
+      { id: 2, title: '资产配置策略', duration: '75分钟', completed: false, videoUrl: video2 }
     ]
   },
   {
@@ -85,8 +90,8 @@ export const mockCourses = [
     rating: 4.9,
     thumbnail: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400',
     lessons: [
-      { id: 1, title: '风险类型与识别', duration: '60分钟', completed: false },
-      { id: 2, title: 'VaR模型应用', duration: '90分钟', completed: false }
+      { id: 1, title: '风险类型与识别', duration: '60分钟', completed: false, videoUrl: video1 },
+      { id: 2, title: 'VaR模型应用', duration: '90分钟', completed: false, videoUrl: video2 }
     ]
   }
 ];

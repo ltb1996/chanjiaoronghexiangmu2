@@ -130,6 +130,27 @@ class StorageUtil {
     localStorage.setItem(key, JSON.stringify(settings));
   }
 
+  // 课程评论相关
+  static getCourseComments(courseId) {
+    const key = `course_comments_${courseId}`;
+    const comments = localStorage.getItem(key);
+    return comments ? JSON.parse(comments) : [];
+  }
+
+  static addCourseComment(courseId, comment) {
+    const comments = this.getCourseComments(courseId);
+    const newComment = {
+      ...comment,
+      id: Date.now(),
+      publishTime: new Date().toLocaleString('zh-CN'),
+      likes: 0
+    };
+    comments.unshift(newComment);
+    const key = `course_comments_${courseId}`;
+    localStorage.setItem(key, JSON.stringify(comments));
+    return newComment;
+  }
+
   // 清除所有数据（调试用）
   static clearAll() {
     localStorage.clear();

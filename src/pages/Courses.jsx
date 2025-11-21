@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { mockCourses } from '../data/mockData';
 import StorageUtil from '../utils/storage';
 import './Courses.css';
@@ -174,9 +175,9 @@ const Courses = ({ currentUser }) => {
 
                 <div className="course-actions">
                   {isEnrolled ? (
-                    <button className="btn btn-primary continue-btn">
+                    <Link to={`/courses/${course.id}`} className="btn btn-primary continue-btn">
                       继续学习
-                    </button>
+                    </Link>
                   ) : (
                     <button 
                       onClick={() => handleEnrollCourse(course.id)}
@@ -185,9 +186,9 @@ const Courses = ({ currentUser }) => {
                       立即报名
                     </button>
                   )}
-                  <button className="btn btn-secondary preview-btn">
+                  <Link to={`/courses/${course.id}`} className="btn btn-secondary preview-btn">
                     课程预览
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

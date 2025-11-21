@@ -67,7 +67,7 @@ const Home = () => {
                   <span>👥 {course.enrolledStudents}人学习</span>
                   <span>⭐ {course.rating}分</span>
                 </div>
-                <Link to={`/courses`} className="btn btn-primary">开始学习</Link>
+                <Link to={`/courses/${course.id}`} className="btn btn-primary">开始学习</Link>
               </div>
             </div>
           ))}
